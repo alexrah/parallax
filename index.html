@@ -1,0 +1,47 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/jquery/2.1.0/jquery.min.js"></script>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/jquery.ui/1.10.4/jquery-ui.min.js"></script>
+    <script type="text/javascript">
+      $(window).ready(function(){
+          $('#logo').animate({
+              opacity : "1",
+            },5000);
+          
+          
+          });
+    </script>
+
+
+    <style>
+      html, body{ height: 98%; }
+      
+      img{ width: 100%; }
+
+      #v-float{
+        height: 49%;
+        margin-top: -167px;
+        width: 100%;
+      }
+      .center{
+        margin: 0 auto;
+        width: 100%;
+      }
+      #logo{
+        margin: auto;
+        max-width: 1173px;
+        opacity: 0;
+ 
+      }
+    </style>
+  </head>
+  <body>
+    <div id="v-float"></div>
+    <div class="center">
+      <div id="logo">
+    <img src="http://www.igiubetti.com/igiubetti.png" alt="" />
+      </div>
+    </div>
+</body>
+</html>
