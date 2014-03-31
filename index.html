@@ -3,6 +3,7 @@
   <head>
     <script type="text/javascript" src="//cdn.jsdelivr.net/jquery/2.1.0/jquery.min.js"></script>
     <script type="text/javascript" src="//cdn.jsdelivr.net/jquery.ui/1.10.4/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/skrollr/0.6.11/skrollr.min.js"></script>
     <script type="text/javascript">
       $(window).ready(function(){
           $('#logo').animate({
@@ -12,9 +13,22 @@
               $('#logo').animate({
                   opacity : "1",
               },1000);
-             
             });
           
+        $.fn.refresh = function (){
+          var s = skrollr.get();
+          if(s){ s.refresh(this); }
+          return this;
+        };
+
+var imageFit = function() {
+  windowHeight = $(window).height();
+  $('.parallax').css('min-height', windowHeight);
+};
+
+$(document).ready(imageFit);
+$(window).resize(imageFit);
+
           });
     </script>
 
@@ -25,7 +39,7 @@
       img{ width: 100%; }
 
       #v-float{
-        height: 49%;
+        height: 35%;
         margin-top: -167px;
         width: 100%;
       }
@@ -37,16 +51,23 @@
         margin: auto;
         max-width: 1173px;
         opacity: 0;
- 
+      }
+      .parallax { 
+        height: inherit;
+        background: url('kids.jpg') no-repeat;
+        background-size: cover;
+        margin-top: 167px;
       }
     </style>
   </head>
-  <body>
-    <div id="v-float"></div>
+<body>
+  <div class="parallax">    
+  <div id="v-float"></div>
     <div class="center">
       <div id="logo">
     <img src="http://www.igiubetti.com/igiubetti.png" alt="" />
       </div>
     </div>
+  </div>
 </body>
 </html>
