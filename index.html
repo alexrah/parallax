@@ -54,20 +54,41 @@ $(window).resize(imageFit);
       }
       .parallax { 
         height: inherit;
-        background: url('kids.jpg') no-repeat;
+        /* background: url('kids-bw.png') no-repeat; */
+        background-repeat: no-repeat;
         background-size: cover;
         margin-top: 167px;
       }
+      #bw {
+        background-image: url('kids-bw.png') ;
+      }
+      #fg {
+        background-image: url('kids.jpg');
+      }
+
+
     </style>
   </head>
 <body>
-  <div class="parallax">    
+
+
+  <div id="bw" class="parallax">    
   <div id="v-float"></div>
     <div class="center">
       <div id="logo">
-    <img src="http://www.igiubetti.com/igiubetti.png" alt="" />
+    <img src="igiubetti.png" alt="" />
       </div>
     </div>
   </div>
+
+  <div id="fg" class="parallax">    
+  <div id="v-float"></div>
+    <div class="center">
+      <div id="logo">
+    <img src="igiubetti.png" alt="" />
+      </div>
+    </div>
+  </div>
+
 </body>
 </html>
