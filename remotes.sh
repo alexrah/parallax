@@ -1,9 +1,5 @@
 #!/bin/bash
-<<<<<<< HEAD
  
-=======
-
->>>>>>> 98dbd679dfed16ed0fca472968f75017ea3b2e9f
 repos=.git/config
 gito=`grep 'gitorious' .git/config`
 hub=`grep 'github' .git/config`
@@ -14,19 +10,11 @@ then
     echo "Gitorius already mirrored."
   else
     echo '[remote "gitorious"]' >> $repos
-<<<<<<< HEAD
     echo "url = git@gitorious.org:alexrah/$1.git" >> $repos
     echo "fetch = +refs/heads/*:refs/remotes/gitorious/*" >> $repos
     echo "Added $1 mirror to Gitorious."
   fi
  
-=======
-    echo "url = git@gitorious.org:teddy/$1.git" >> $repos
-    echo "fetch = +refs/heads/*:refs/remotes/gitorious/*" >> $repos
-    echo "Added $1 mirror to Gitorious."
-  fi
-
->>>>>>> 98dbd679dfed16ed0fca472968f75017ea3b2e9f
   if [ -n "$hub" ]
   then
     echo "GitHub already mirrored"
