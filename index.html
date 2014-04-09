@@ -3,7 +3,7 @@
   <head>
     <script type="text/javascript" src="//cdn.jsdelivr.net/jquery/2.1.0/jquery.min.js"></script>
     <script type="text/javascript" src="//cdn.jsdelivr.net/jquery.ui/1.10.4/jquery-ui.min.js"></script>
-    <script type="text/javascript" src="//cdn.jsdelivr.net/skrollr/0.6.11/skrollr.min.js"></script>
+    <!-- <script type="text/javascript" src="//cdn.jsdelivr.net/skrollr/0.6.11/skrollr.min.js"></script> -->
     <script type="text/javascript">
       $(window).ready(function(){
           $('#logo').animate({
@@ -13,6 +13,16 @@
               $('#logo').animate({
                   opacity : "1",
               },1000);
+              
+              var scrolled = $(window).scrollTop();
+              if (scrolled > 100) {
+                $('.parallax').addClass('fg');
+                $('.parallax').removeClass('bg');
+                } else {
+                $('.parallax').addClass('bg');
+                $('.parallax').removeClass('fg');
+                }
+
             });
           
         $.fn.refresh = function (){
@@ -21,20 +31,22 @@
           return this;
         };
 
-var imageFit = function() {
-  windowHeight = $(window).height();
-  $('.parallax').css('min-height', windowHeight);
-};
+// var imageFit = function() {
+//   windowHeight = $(window).height();
+//   $('.parallax').css('min-height', windowHeight);
+// };
+// 
+// $(document).ready(imageFit);
+// $(window).resize(imageFit);
 
-$(document).ready(imageFit);
-$(window).resize(imageFit);
+
 
           });
     </script>
 
 
     <style>
-      html, body{ height: 98%; }
+      html, body{ height: 100%; }
       
       img{ width: 100%; }
 
@@ -59,10 +71,10 @@ $(window).resize(imageFit);
         background-size: cover;
         margin-top: 167px;
       }
-      #bw {
-        background-image: url('kids-bw.png') ;
+      .bg {
+        background-image: url('kids-bw.jpg') ;
       }
-      #fg {
+      .fg {
         background-image: url('kids.jpg');
       }
 
@@ -72,7 +84,7 @@ $(window).resize(imageFit);
 <body>
 
 
-  <div id="bw" class="parallax">    
+  <div id="bw" class="parallax bg">    
   <div id="v-float"></div>
     <div class="center">
       <div id="logo">
@@ -81,14 +93,29 @@ $(window).resize(imageFit);
     </div>
   </div>
 
-  <div id="fg" class="parallax">    
-  <div id="v-float"></div>
-    <div class="center">
-      <div id="logo">
-    <img src="igiubetti.png" alt="" />
-      </div>
-    </div>
-  </div>
+  <!-- <div id="fg" class="parallax">     -->
+  <!-- <div id="v-float"></div> -->
+  <!--   <div class="center"> -->
+  <!--     <div id="logo"> -->
+  <!--   <img src="igiubetti.png" alt="" /> -->
+  <!--     </div> -->
+  <!--   </div> -->
+  <!-- </div> -->
+ <div class="wrapper">
+   <div class="sidebar"></div>
+   <div class="content">
+     <p>
+       Aliquam cursus suscipit libero, ut hendrerit enim aliquet non. Phasellus luctus purus a libero consequat consectetur. Vestibulum id ullamcorper dolor, sed tempor justo. Ut elementum adipiscing sem in bibendum. Nullam ut commodo turpis, a fringilla elit. Nullam nec nibh felis. Phasellus ac feugiat ipsum. Quisque lorem ipsum, sagittis sed dui ut, tristique aliquam elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Phasellus suscipit libero in nisl condimentum, eu tempus magna tristique. Cras gravida nulla erat, vel dapibus magna posuere elementum. Donec volutpat tellus sapien, vitae eleifend orci posuere sed. Curabitur non tortor massa. Quisque ut hendrerit mi, quis placerat metus. Vestibulum vestibulum blandit nulla nec porttitor. Nulla bibendum, odio vitae interdum volutpat, augue nisl placerat eros, sed sollicitudin augue eros eu ante.
 
+       Donec ultricies nisi interdum egestas rhoncus. Sed posuere accumsan ante, sed venenatis velit mollis ut. Quisque nunc magna, feugiat vitae gravida ut, faucibus vel magna. Etiam ac justo at eros vestibulum ultricies. Vivamus sed libero nibh. Aliquam erat volutpat. Sed id accumsan eros. Morbi justo nulla, aliquet nec euismod interdum, scelerisque et neque. Nullam vulputate, erat eu mattis feugiat, quam augue mattis dolor, a feugiat nisl neque id velit. Nunc rhoncus vulputate odio nec porta. Nullam a nunc in neque tincidunt mattis. Quisque ac sem nec nunc euismod rhoncus. Nam malesuada rutrum pulvinar. Nunc tristique et nibh nec mollis.
+
+       Fusce ac rutrum purus. Nam mollis, lorem vel venenatis consectetur, erat nisl dapibus dui, nec convallis nunc mauris a dui. Praesent nulla libero, lobortis et ullamcorper non, malesuada vitae ligula. Morbi in vehicula elit, in aliquam nunc. Nam venenatis, neque sit amet faucibus porta, nunc orci gravida nisl, in viverra diam diam eget lorem. Praesent semper nisi in dui dapibus dictum. In aliquam urna eu ipsum elementum, eget consequat leo suscipit.
+
+       Vivamus ac mauris ac leo pretium imperdiet vitae ut quam. Donec eleifend justo justo. Maecenas quis velit sagittis, adipiscing enim in, feugiat eros. Integer tristique mattis sem, vel tristique purus blandit vel. Fusce cursus, magna vel ornare laoreet, sapien risus semper turpis, et fermentum mi justo vel enim. Morbi pretium venenatis ipsum nec tincidunt. Etiam condimentum fermentum nulla id lacinia. Maecenas laoreet commodo risus, ut commodo nisl aliquam eget. Maecenas gravida a metus ut iaculis. Integer rutrum quis dolor eget consequat. Donec ac mi velit.
+
+       Donec egestas feugiat est quis suscipit. Proin in quam eget arcu cursus mattis. Curabitur in lobortis turpis. Maecenas gravida tortor vitae neque ultrices consequat vel non augue. Mauris tempor mattis egestas. Donec vel nulla at ipsum mattis aliquam. Aliquam erat volutpat. Morbi non placerat diam. In a ultrices erat. Phasellus posuere nunc pellentesque purus iaculis porttitor. Nulla facilisi. Donec aliquam ornare vulputate. Phasellus accumsan lacus at libero lobortis imperdiet.
+     </p>
+   </div>
+ </div>
 </body>
 </html>
